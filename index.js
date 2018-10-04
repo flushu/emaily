@@ -6,5 +6,7 @@ app.get("/", (req, res) => {
   res.send({ hi: "there" });
 });
 
+// changes need to be done for pushing codes to heroku
+
 const PORT = process.env.PORT || 5000; // if PORT is not defined on environment, use 5000.
 app.listen(PORT);
