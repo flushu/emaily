@@ -1,0 +1,44 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add express
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.8.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect EHOSTUNREACH 104.16.20.35:443 - Local (192.168.86.21:55604)
+      at internalConnect (net.js:937:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:281:19)
+      at emitLookup (net.js:1090:9)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:101917:29
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:101763:25
+      at RawTask.module.exports.RawTask.call (/usr/local/lib/node_modules/yarn/lib/cli.js:82623:19)
+      at flush (/usr/local/lib/node_modules/yarn/lib/cli.js:82705:29)
+      at process._tickCallback (internal/process/next_tick.js:112:11)
