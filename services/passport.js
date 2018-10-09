@@ -15,6 +15,7 @@ passport.serializeUser((user, done) => {
    *    "googleId": "series of characters",
    * }
    */
+  console.log("serialize user", user);
   done(null, user.id); // user.id is id as mongodb identifier for a user model record
 });
 
@@ -24,7 +25,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((id, done) => {
   // mongodb.findOne({__id: id})
   User.findById(mongoose.Types.ObjectId(id), (err, user) => {
-    console.log(user);
+    console.log("deserialize user", user);
     done(err, user);
   });
 });
@@ -40,7 +41,7 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       // returns a promise
       User.findOne({
-        id: profile.id
+        googleId: profile.id
       }).then(existingUser => {
         // if record wasn't found, existingUser is null
         if (existingUser) {
