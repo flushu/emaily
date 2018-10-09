@@ -22,8 +22,10 @@ passport.serializeUser((user, done) => {
  * Deserialize user
  */
 passport.deserializeUser((id, done) => {
-  User.findById(id).then(user => {
-    done(null, user);
+  // mongodb.findOne({__id: id})
+  User.findById(mongoose.Types.ObjectId(id), (err, user) => {
+    console.log(user);
+    done(err, user);
   });
 });
 
@@ -47,7 +49,7 @@ passport.use(
         } else {
           // we don't have a user record with this ID, make a new record.
           new User({
-            id: profile.id
+            googleId: profile.id
           })
             .save()
             .then(user => done(null, user));

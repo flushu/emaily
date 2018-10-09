@@ -2,6 +2,7 @@ const express = require("express"); // require is a common js module; nodejs doe
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
 const cookieSession = require("cookie-session"); // give access to cookie
+const passport = require("passport");
 require("./models/User");
 require("./services/passport");
 
@@ -11,7 +12,6 @@ mongoose.connect(
 );
 
 const app = express(); // creates an express app; setup implementations on work flow as middleware between http request and response
-require("./routes/authRoutes")(app);
 
 /**
  * enabling cookie inside of the app
@@ -31,6 +31,8 @@ app.use(passport.session());
 app.get("/", (req, res) => {
   res.send({ hi: "there" });
 });
+
+require("./routes/authRoutes")(app);
 
 // changes need to be done for pushing codes to heroku
 
