@@ -19,6 +19,15 @@ passport.serializeUser((user, done) => {
   done(null, user.id); // user.id is id as mongodb identifier for a user model record
 });
 
+/**
+ * Deserialize user
+ */
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
+});
+
 passport.use(
   new GoogleStrategy(
     {
