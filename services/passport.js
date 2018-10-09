@@ -1,7 +1,6 @@
-const passport = require("passport");
+const passport = require("passport"); // user a cookie session
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const keys = require("../config/keys");
-
 const mongoose = require("mongoose");
 
 const User = mongoose.model("users");
