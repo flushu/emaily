@@ -1,12 +1,16 @@
-const express = require("express"); // common js module for require; nodejs doesn't have es2015 which doesn't work for 'import express from 'express'; explains why use require
+const express = require("express"); // require is a common js module; nodejs doesn't have es2015 which doesn't work for 'import express from 'express'; explains why use require
+const mongoose = require("mongoose");
+const keys = require("./config/keys");
+require("./models/User");
+require("./services/passport");
 
-const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+mongoose.connect(
+  keys.mongoURI,
+  { useNewUrlParser: true }
+);
 
 const app = express(); // creates an express app; setup implementations on work flow as middleware between http request and response
-
-passport.use(new GoogleStrategy()); // passport.use: set up a provider
-// need to get client id and secret
+require("./routes/authRoutes")(app);
 
 app.get("/", (req, res) => {
   res.send({ hi: "there" });
