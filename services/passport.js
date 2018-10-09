@@ -6,6 +6,19 @@ const mongoose = require("mongoose");
 
 const User = mongoose.model("users");
 
+// serialize user when producing a piece of information to identify a user.
+passport.serializeUser((user, done) => {
+  /**
+   * {
+   *    "__id": {
+   *      "$oid:": "characters"
+   *    },
+   *    "googleId": "series of characters",
+   * }
+   */
+  done(null, user.id); // user.id is id as mongodb identifier for a user model record
+});
+
 passport.use(
   new GoogleStrategy(
     {
