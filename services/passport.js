@@ -39,24 +39,22 @@ passport.use(
       proxy: true // enable heroku proxy
     },
     // done returns the passport process is done
-    (accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, done) => {
       // returns a promise
-      User.findOne({
+      const existingUser = await User.findOne({
         googleId: profile.id
-      }).then(existingUser => {
-        // if record wasn't found, existingUser is null
-        if (existingUser) {
-          // we already have a record with the given profile ID
-          done(null, existingUser); //frist argument is any error
-        } else {
-          // we don't have a user record with this ID, make a new record.
-          new User({
-            googleId: profile.id
-          })
-            .save()
-            .then(user => done(null, user));
-        }
       });
+      // if record wasn't found, existingUser is null
+      if (existingUser) {
+        // we already have a record with the given profile ID
+        return done(null, existingUser); //frist argument is any error
+      }
+      // we don't have a user record with this ID, make a new record.
+      // second promise after .save()
+      const user = await new User({
+        googleId: profile.id
+      }).save();
+      done(null, user);
     }
   )
 ); // passport.use: set up a provider

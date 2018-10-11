@@ -12,11 +12,20 @@
 //     .then(json => console.log(json));
 // }
 
-async function fetchAlbums() {
-  // put await keyword in front of promise
+// async function fetchAlbums() {
+//   // put await keyword in front of promise
+//   const res = await fetch("https://rallycoding.herokuapp.com/api/music_albums");
+//   const json = await res.json();
+//   console.log(json);
+// }
+
+/**
+ * refractored above function using es syntax. Using async instead of promises
+ */
+const fetchAlbums = async () => {
   const res = await fetch("https://rallycoding.herokuapp.com/api/music_albums");
   const json = await res.json();
   console.log(json);
-}
+};
 
 fetchAlbums();
