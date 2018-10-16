@@ -11,8 +11,9 @@ export const fetchUser = () => async dispatch => {
   //     })
   //   );
   const res = await axios.get("/api/current_user");
+  // res has config, data, headers, request, status, statusText, etc... we just need data
   dispatch({
     type: FETCH_USER,
-    payload: res
+    payload: res.data
   });
 };
