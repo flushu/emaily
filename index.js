@@ -14,7 +14,7 @@ mongoose.connect(
 
 const app = express(); // creates an express app; setup implementations on work flow as middleware between http request and response
 
-app.user(bodyParser.json());
+app.use(bodyParser.json());
 
 /**
  * enabling cookie inside of the app; it's like wiring a middleware (a small funcation that can use to modify incoming request to my app before send off to route handler)
