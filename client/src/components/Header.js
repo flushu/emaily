@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Payments from "./Payments";
 
 class Header extends Component {
   renderContent() {
@@ -13,11 +14,14 @@ class Header extends Component {
           </li>
         );
       default:
-        return (
-          <li>
+        return [
+          <li key={1}>
+            <Payments />
+          </li>,
+          <li key={2}>
             <a href="/api/logout">Logout</a>
           </li>
-        );
+        ];
     }
   }
   render() {
