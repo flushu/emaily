@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
 });
 
 require("./routes/authRoutes")(app);
+require("./routes/billingRoutes")(app); //calling billing routes
 
 // changes need to be done for pushing codes to heroku
 
