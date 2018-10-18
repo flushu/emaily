@@ -4,12 +4,12 @@ import { BrowserRouter, Route } from "react-router-dom";
 // BrowserRouter: tells React how to behave
 // Route: React component used to setup rules between certain routes inside applications
 import Header from "./Header";
+import Landing from "./Landing";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>Survey New</h2>;
-const Landing = () => <h2>Landing</h2>;
 
 /**
  * class component using jsx

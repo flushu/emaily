@@ -18,7 +18,7 @@ module.exports = app => {
 
   app.get("/api/logout", (req, res) => {
     req.logout(); // req.logout() is a function that attached to automatically to the request object by passportjs. it takes a cookie that contains a user id and it kills the id in the user
-    res.send(res.user);
+    res.redirect("/");
   });
 
   // get access to user
