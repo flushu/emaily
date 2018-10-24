@@ -1,0 +1,45 @@
+{
+  "window.zoomLevel": 0,
+  "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.snippetSuggestions": "top",
+  "materialTheme.autoApplyIcons": true,
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#388E3C",
+    "list.activeSelectionForeground": "#388E3C",
+    "list.inactiveSelectionForeground": "#388E3C",
+    "list.highlightForeground": "#388E3C",
+    "scrollbarSlider.activeBackground": "#388E3C50",
+    "editorSuggestWidget.highlightForeground": "#388E3C",
+    "textLink.foreground": "#388E3C",
+    "progressBar.background": "#388E3C",
+    "pickerGroup.foreground": "#388E3C",
+    "tab.activeBorder": "#388E3C",
+    "notificationLink.foreground": "#388E3C",
+    "editorWidget.resizeBorder": "#388E3C",
+    "editorWidget.border": "#388E3C",
+    "settings.modifiedItemIndicator": "#388E3C",
+    "settings.modifiedItemForeground": "#388E3C",
+    "settings.headerForeground": "#388E3C",
+    "panelTitle.activeBorder": "#388E3C",
+    "breadcrumb.activeSelectionForeground": "#388E3C",
+    "menu.selectionForeground": "#388E3C",
+    "menubar.selectionForeground": "#388E3C"
+  },
+  "materialTheme.accent": "Breaking Bad",
+  "cSpell.words": [
+    "emaily",
+    "heroku",
+    "postbuild"
+  ],
+  "files.exclude": {
+    "**/.git": false,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  }
+}
